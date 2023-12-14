@@ -23,7 +23,9 @@ app.use(cookieParser());
 app.use(cors({ limit: '100mb' }));
 
 // Middleware with specific origin and credentials
-app.use(cors({ origin: [process.env.CLIENT_URL], credentials: true }));
+app.use(cors({ origin: ["https://hotel-booking-webiste-dzvx.vercel.app/"],
+              ,method:["POST,"GET"],
+              credentials: true }));
 
 // Middleware to parse JSON with a higher payload limit
 app.use(express.json({ limit: '10mb' }));
