@@ -16,7 +16,7 @@ export function UserContextProvider({ children }) {
         const token = Cookies.get('token');
 
         if (token) {
-          const response = await axios.get('https://hotel-booking-webiste.vercel.app//api/v1/auth/getuser', {
+          const response = await axios.get('https://hotel-booking-webiste.vercel.app/api/v1/auth/getuser', {
             headers: {
               Authorization: `${token}`,
             },
