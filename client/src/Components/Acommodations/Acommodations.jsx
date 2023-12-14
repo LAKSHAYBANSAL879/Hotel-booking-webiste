@@ -14,7 +14,7 @@ export const Acommodations = () => {
   useEffect(() => {
     const fetchUserPlaces = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/place/getallPlaces', {});
+        const response = await axios.get('https://hotel-booking-webiste.vercel.app/api/v1/place/getallPlaces', {});
         const filteredPlaces = response.data.filter(place => place.owner === ownerName);
 
         setUserPlaces(filteredPlaces);
