@@ -30,7 +30,8 @@ const PropertyDetails = () => {
   useEffect(() => {
     const fetchPropertyDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/v1/place/${title}`);
+        const response = await axios.get(`https://hotel-booking-webiste.vercel.app/api/v1/place/${title}`);
+     
         setProperty(response.data);
       } catch (error) {
         console.error('Error fetching property details:', error);
