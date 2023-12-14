@@ -22,7 +22,7 @@ const Booking = () => {
 
   function handlePayment() {
 
-    fetch('http://localhost:8080/api/v1/booking/saveBooking', {
+    fetch('https://hotel-booking-webiste.vercel.app/api/v1/booking/saveBooking', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
