@@ -10,7 +10,7 @@ const Bookings = () => {
   const { ownerName } = useContext(UserContext);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/v1/booking/getBooking')
+    fetch('https://hotel-booking-webiste.vercel.app/api/v1/booking/getBooking')
       .then(response => response.json())
       .then(data => {
         setBookings(data);
@@ -24,7 +24,7 @@ const Bookings = () => {
 
   const getHotelDetails = async (title) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/place/${encodeURIComponent(title)}`);
+      const response = await fetch(`https://hotel-booking-webiste.vercel.app/api/v1/place/${encodeURIComponent(title)}`);
       const data = await response.json();
       return data;
     } catch (error) {
