@@ -15,7 +15,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserPlaces = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/place/getallPlaces', {});
+        const response = await axios.get('https://hotel-booking-webiste.vercel.app/api/v1/place/getallPlaces', {});
         setUserPlaces(response.data);
       } catch (error) {
         console.error('Error fetching user places:', error);
