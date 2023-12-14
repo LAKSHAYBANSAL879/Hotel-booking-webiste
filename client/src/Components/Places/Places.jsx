@@ -80,11 +80,11 @@ export default function Places() {
     try {
       if (placeTitle) {
         // update
-        await axios.put(`http://localhost:8080/api/v1/place/update-place/${placeTitle}`, placeData);
+        await axios.put(`https://hotel-booking-webiste.vercel.app/api/v1/place/update-place/${placeTitle}`, placeData);
       } else {
         // new place
         console.log("place-data",placeData);
-        await axios.post('http://localhost:8080/api/v1/place/create-place', placeData);
+        await axios.post('https://hotel-booking-webiste.vercel.app/api/v1/place/create-place', placeData);
        
         // <Navigate to='/accomodations'/>
       }
