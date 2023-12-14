@@ -1,46 +1,45 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
-
-const jwt=require('jsonwebtoken');
-const cookieParser=require('cookie-parser')
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const crypto=require('crypto');
+const crypto = require('crypto');
 const connectDB = require("./config/db");
 const path = require("path");
-//dot config
+const multer = require('multer');
+
+// Load environment variables
 dotenv.config();
 
-//mongodb connection
+// MongoDB connection
 connectDB();
 
-//rest object
+// Create an Express app
 const app = express();
 app.use(cookieParser());
-//middlewares
-app.use(express.json());
+
 // Middleware for general CORS options
-app.use(cors());
+app.use(cors({ limit: '100mb' }));
 
 // Middleware with specific origin and credentials
 app.use(cors({ origin: [process.env.CLIENT_URL], credentials: true }));
 
+// Middleware to parse JSON with a higher payload limit
+app.use(express.json({ limit: '10mb' }));
 
-//routes
-// 1 test route
+// Middleware to parse URL-encoded data
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Routes
 app.use("/api/v1/auth", require("./routes/authRoutes.js"));
 app.use("/api/v1/place", require("./routes/placesRoutes.js"));
+app.use("/api/v1/booking", require("./routes/bookingRoutes.js"));
 
-
-
-// app.use(express.static(path.join(__dirname,'../frontend/dist')))
-
-
+// Set the port
 const PORT = process.env.PORT || 8080;
 
-
+// Start the server
 app.listen(PORT, () => {
-  console.log(
-    `Node Server Running On Port ${process.env.PORT}`
-  );
+  console.log(`Node Server Running On Port ${PORT}`);
 });

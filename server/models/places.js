@@ -1,14 +1,18 @@
 const mongoose=require('mongoose');
 const placeSchema=new mongoose.Schema({
     owner:String,
-   title:String,
+   title: {
+    type:String,
+    unique:[true,"unique title is must"]
+   },
    address:String,
-   photos:[String],
+   addedPhotos:[String],
    description:String,
    perks:[String],
    extraInfo:String,
    checkIn:Number,
    checkOut:Number,
+   price:Number,
    maxGuests:Number, 
 });
 

@@ -4,12 +4,16 @@ const multer = require('multer');
 const cors = require('cors');
 const upload = multer();
 const placesRouter = express.Router();
+
 const placesController = require('../controllers/placeControllers');
+
 placesRouter.post('/create-place', placesController.createPlace);
 placesRouter.get('/user-places', placesController.getUserPlaces);
-// placesRouter.get('/:id', placesController.getPlaceById);
+
+
 placesRouter.put('/update-place', placesController.updatePlace);
 placesRouter.get('/getallPlaces', placesController.getAllPlaces);
+placesRouter.get('/:title', placesController.getPlaceByTitle);
 
 const pictureSchema = new mongoose.Schema({
   url: String,
@@ -64,3 +68,4 @@ placesRouter.post('/upload/gallery', upload.array('photos'), async (req, res) =>
 });
 
 module.exports = placesRouter;
+

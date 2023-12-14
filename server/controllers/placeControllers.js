@@ -72,27 +72,24 @@ exports.getUserPlaces = async (req, res) => {
 
 
 
-exports.getPlaceById = async (req, res) => {
-    try {
-      const { id } = req.params;
-  
-      // Check if the provided ID is a valid ObjectId
-      if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({ error: 'Invalid place ID' });
-      }
-  
-      const place = await Place.findById(id);
-  
-      if (!place) {
-        return res.status(404).json({ error: 'Place not found' });
-      }
-  
-      res.json(place);
-    } catch (error) {
-      console.error('Error getting place by ID:', error);
-      res.status(500).json({ error: 'Internal Server Error', message: error.message });
+exports.getPlaceByTitle = async (req, res) => {
+  try {
+    const { title } = req.params;
+
+   
+    const place = await Place.findOne({ title });
+
+    if (!place) {
+      return res.status(404).json({ error: 'Place not found' });
     }
-  };
+
+    res.json(place);
+  } catch (error) {
+    console.error('Error getting place by title:', error);
+    res.status(500).json({ error: 'Internal Server Error', message: error.message });
+  }
+};
+
   
 
 exports.updatePlace = async (req, res) => {
