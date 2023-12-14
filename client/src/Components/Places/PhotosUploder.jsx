@@ -8,7 +8,7 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
   async function uploadPhotoByLink(ev) {
     ev.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/place/upload/link', { url: photoLink });
+      const response = await axios.post('https://hotel-booking-webiste.vercel.app/api/v1/place/upload/link', { url: photoLink });
       const uploadedUrl = response.data.url;
       onChange((prev) => [...prev, { url: uploadedUrl }]);
       setPhotoLink('');
@@ -32,7 +32,7 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
     }
   
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/place/upload/gallery', data, {
+      const response = await axios.post('https://hotel-booking-webiste.vercel.app/api/v1/place/upload/gallery', data, {
         headers: { 'Content-type': 'multipart/form-data' },
       });
       console.log(response);
