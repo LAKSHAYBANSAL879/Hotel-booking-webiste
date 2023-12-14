@@ -16,7 +16,7 @@ export const LoginSignup = () => {
 
     try {
       
-     const response= await axios.post('https://hotel-booking-webiste.vercel.app//api/v1/auth/signin', {
+     const response= await axios.post('https://hotel-booking-webiste.vercel.app/api/v1/auth/signin', {
              
         email,
         password,
