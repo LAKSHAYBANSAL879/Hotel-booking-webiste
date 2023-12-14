@@ -15,7 +15,7 @@ export const Signup = () => {
 
     try {
       // Send user data to the server
-      await axios.post('http://localhost:8080/api/v1/auth/signup', {
+      await axios.post('https://hotel-booking-webiste.vercel.app//api/v1/auth/signup', {
         name,
         email,
         password,
