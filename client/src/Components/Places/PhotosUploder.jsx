@@ -85,10 +85,10 @@ export default function PhotosUploader({ addedPhotos, onChange }) {
           />
         </button>
       </div>
-      <div className="mt-2 grid gap-2 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      <div className="mt-2 flex flex-row flex-wrap w-full gap-4">
         {addedPhotos.length > 0 &&
           addedPhotos.map((photo, index) => (
-            <div className="h-32 flex relative" key={index}>
+            <div className="w-64 h-32 flex relative" key={index}>
               <img className="rounded-2xl w-full object-cover" src={photo.url} alt="" />
               <button
                 onClick={(ev) => removePhoto(ev, photo.url)}

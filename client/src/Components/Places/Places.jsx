@@ -76,24 +76,32 @@ export default function Places() {
       maxGuests,
       price,
     };
-
+    console.log("place-data",placeData);
     try {
       if (placeTitle) {
         // update
         await axios.put(`http://localhost:8080/api/v1/place/update-place/${placeTitle}`, placeData);
       } else {
         // new place
+        console.log("place-data",placeData);
         await axios.post('http://localhost:8080/api/v1/place/create-place', placeData);
+       
+        // <Navigate to='/accomodations'/>
       }
+      alert("New place has been added sucessfully");
       setRedirect(true);
+       if (redirect) {
+    return <Navigate to={'/accomodations'} />;
+    // Navigate('/accomodations')
+  }
     } catch (error) {
       console.error('Error saving place:', error);
     }
   }
 
-  if (redirect) {
-    return <Navigate to={'/accomodations'} />;
-  }
+  // if (redirect) {
+  //   return <Navigate to={'/accomodations'} />;
+  // }
 
   return (
     <div className="overflow-hidden">
@@ -187,7 +195,9 @@ export default function Places() {
             />
           </div>
         </div>
-        <button className="flex pl-4 pr-4 mt-3 justify-center align-middle items-center m-auto mb-2 text-2xl bg-red-500 text-white font-bold rounded-xl p-2 mt-4">Save</button>
+        <div className='flex pl-4 pr-4 w-full  flex-row justify-center align-middle items-center '>
+        <button className=" pl-4 pr-4 w-3/4 mt-4 mr-32 mb-2 text-2xl bg-red-500 text-white font-bold rounded-xl pt-1 pb-2 ">Save</button>
+        </div>
       </form>
     </div>
   );

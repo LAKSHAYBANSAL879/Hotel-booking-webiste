@@ -8,7 +8,7 @@ export const Account = () => {
   const isActive = (pathname) => location.pathname === pathname;
 
   return (
-    <div className='flex flex-row justify-evenly mt-4 text-xl font-semibold'>
+    <div className='flex flex-col  md:flex-row justify-evenly mt-4 text-xl font-semibold'>
       <div
         className={`${
           isActive('/profile') ? 'bg-red-600 text-white' : 'bg-gray-200 text-black'
@@ -29,7 +29,7 @@ export const Account = () => {
       <div
         className={`${
           isActive('/accomodations') ? 'bg-red-600 text-white' : 'bg-gray-200 text-black'
-        }  flex flex-row justify-center items-center gap-2 font-bold p-3 rounded-full`}
+        }  flex  flex-row justify-center items-center gap-2 font-bold p-3 rounded-full`}
       >
         <FontAwesomeIcon icon={faHotel}/>
 
