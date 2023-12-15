@@ -24,7 +24,7 @@ app.use(cors({ limit: '100mb' }));
 
 // Middleware with specific origin and credentials
 app.use(cors({ origin: ["https://hotel-booking-webiste-dzvx.vercel.app/"],
-              method:["POST,"GET"],
+              method:["POST","GET"],
               credentials: true }));
 
 // Middleware to parse JSON with a higher payload limit
