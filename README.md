@@ -59,7 +59,7 @@ The application should be running at `http://localhost:3000`.
 
 ## Screenshots
 
-![Screenshot 1](./screenshots/screenshot1.png)
+![Screenshot 1](client/public/Screenshot 2023-12-14 230405.png)
 
 
 ![Screenshot 2](./screenshots/screenshot2.png)
