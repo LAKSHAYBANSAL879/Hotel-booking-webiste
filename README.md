@@ -59,10 +59,12 @@ The application should be running at `http://localhost:3000`.
 
 ## Screenshots
 
-![Screenshot 1](./client/public/Screenshot2023-12-14230405.png)
+![Screenshot 1](./client/public/ss1.png)
 
 
-![Screenshot 2](./screenshots/screenshot2.png)
+![Screenshot 2](./client/public/ss2.png)
+
+![Screenshot 3](./client/public/ss3.png)
 
 
 ...
