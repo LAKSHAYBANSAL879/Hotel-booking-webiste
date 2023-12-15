@@ -42,6 +42,11 @@ app.use("/api/v1/booking", require("./routes/bookingRoutes.js"));
 const PORT = process.env.PORT || 8080;
 
 // Start the server
+app.get('/',(req,res,next)=>{
+  res.status(200).json({
+    message:'server is running good'
+  })
+})
 app.listen(PORT, () => {
   console.log(`Node Server Running On Port ${PORT}`);
 });
