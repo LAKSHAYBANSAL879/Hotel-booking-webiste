@@ -67,14 +67,6 @@ The application should be running at `http://localhost:3000`.
 ![Screenshot 3](./client/public/ss3.png)
 
 
-...
-
-## How to Add Screenshots
-
-If you'd like to contribute additional screenshots:
-
-1. Add your screenshots to the `screenshots` folder in the root directory of the project.
-2. Update the README file to include your new screenshots, following the existing format.
 
 ## Contributing
 
