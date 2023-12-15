@@ -32,7 +32,11 @@ app.use(express.json({ limit: '10mb' }));
 
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-
+app.get('/',(req,res,next)=>{
+  res.status(200).json({
+    message:'server is running good'
+  })
+})
 // Routes
 app.use("/api/v1/auth", require("./routes/authRoutes.js"));
 app.use("/api/v1/place", require("./routes/placesRoutes.js"));
@@ -42,11 +46,7 @@ app.use("/api/v1/booking", require("./routes/bookingRoutes.js"));
 const PORT = process.env.PORT || 8080;
 
 // Start the server
-app.get('/',(req,res,next)=>{
-  res.status(200).json({
-    message:'server is running good'
-  })
-})
+
 app.listen(PORT, () => {
   console.log(`Node Server Running On Port ${PORT}`);
 });
