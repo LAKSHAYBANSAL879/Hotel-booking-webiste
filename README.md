@@ -1,5 +1,5 @@
 
-Welcome to our Hotel Booking Website! This platform allows users to discover and book hotels seamlessly. Below, you'll find information on how to set up the project, some screenshots to get a glimpse of the user interface, and instructions on how to add your own screenshots.
+Welcome to our Hotel Booking Website! This platform allows users to discover and book hotels seamlessly. Below, you'll find information on how to set up the project, some screenshots to get a glimpse of the user interface.
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ Welcome to our Hotel Booking Website! This platform allows users to discover and
    Create a `.env` file in the root directory and add your configuration:
 
    ```env
-   MONGODB_URI=your_mongodb_connection_string
+   MONGODB_URI=mongodb+srv://authdb:99999@cluster0.plibeu4.mongodb.net/bookit
    JWT_SECRET=your_jwt_secret_key
    ```
 
@@ -59,7 +59,7 @@ The application should be running at `http://localhost:3000`.
 
 ## Screenshots
 
-![Screenshot 1](./client/public/Screenshot 2023-12-14 230405.png)
+![Screenshot 1](./client/public/Screenshot2023-12-14230405.png)
 
 
 ![Screenshot 2](./screenshots/screenshot2.png)
