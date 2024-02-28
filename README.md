@@ -55,7 +55,7 @@ The application should be running at `http://localhost:3000`.
 - Hotel discovery with detailed information
 - Booking functionality with reservation management
 - Searching hotel based on name and location
-- Esily add new property
+- Easily add new property
 
 ## Screenshots
 
