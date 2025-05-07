@@ -36,10 +36,6 @@ Welcome to our Hotel Booking Website! This platform allows users to discover and
 
    Create a `.env` file in the root directory and add your configuration:
 
-   ```env
-   MONGODB_URI=mongodb+srv://authdb:99999@cluster0.plibeu4.mongodb.net/bookit
-   JWT_SECRET=your_jwt_secret_key
-   ```
 
 4. Run the application:
 
